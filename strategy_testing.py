@@ -34,7 +34,7 @@ if st.button("Test the strategy. Let's see whether this strategy is profitable")
     # Test the input
     if len(pct_volume_breakout) == 0 or len(daily_change_threshold) == 0 or len(holding_period) == 0:
         st.text("The input is incorrect. Please make sure that you type in all inputs")
-    elif not holding_period.isdigit() and holding_period < 1:
+    elif (not holding_period.isdigit()) or (holding_period < 1):
         st.text("Please type the holding period as a positive whole number")
     elif daily_change_threshold.isalpha():
         st.text("Please type the threshold for the percentage change as a number")
